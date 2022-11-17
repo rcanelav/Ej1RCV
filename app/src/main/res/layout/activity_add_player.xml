@@ -7,12 +7,12 @@
     tools:context=".AddPlayerActivity">
 
     <LinearLayout
+        android:id="@+id/headerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent"
         android:background="@color/purple_500"
-        android:id="@+id/headerLayout">
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
         >
 
         <TextView
@@ -20,24 +20,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:layout_marginLeft="30dp"
             android:gravity="center"
             android:text="Nuevo Jugador"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginLeft="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.133"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/codeLayout"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="75dp"
         android:orientation="horizontal"
+        android:layout_marginTop="75dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerLayout">
@@ -61,18 +62,17 @@
             android:layout_height="wrap_content"
             android:ems="11"
             android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toEndOf="@+id/txtPlayerCode"
-            app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/nameLayout"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@id/priceLayout"
+        app:layout_constraintBottom_toTopOf="@id/priceLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/codeLayout">
@@ -88,7 +88,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.12"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/headerLayout" />
+            app:layout_constraintTop_toBottomOf="parent" />
 
         <EditText
             android:id="@+id/etPlayerName"
@@ -98,19 +98,20 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toEndOf="@+id/txtPlayerCode"
-            app:layout_constraintTop_toBottomOf="@+id/nameLayout" />
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/priceLayout"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameLayout"
+        app:layout_constraintBottom_toTopOf="@id/positionLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameLayout">
+        >
 
         <TextView
             android:id="@+id/txtPrice"
@@ -127,6 +128,42 @@
 
         <EditText
             android:id="@+id/etPlayerPrice"
+            android:layout_width="283dp"
+            android:layout_height="wrap_content"
+            android:ems="11"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/positionLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceLayout">
+
+        <TextView
+            android:id="@+id/txtPosicion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Posicion"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/positionLayout" />
+
+        <EditText
+            android:id="@+id/etPosition"
             android:layout_width="283dp"
             android:layout_height="wrap_content"
             android:ems="11"
