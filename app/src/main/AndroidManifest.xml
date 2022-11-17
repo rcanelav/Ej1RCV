@@ -13,6 +13,13 @@
         android:theme="@style/Theme.Ej1RCV"
         tools:targetApi="31">
         <activity
+            android:name=".AddPlayerActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".PlayerListActivity"
             android:exported="false">
             <meta-data
