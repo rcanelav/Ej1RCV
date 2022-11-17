@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         var tries = 0;
         val loginButton = findViewById<Button>(R.id.btnLogin);
-        loginButton.setOnClickListener({
+        loginButton.setOnClickListener{
             val username = findViewById<EditText>(R.id.etUser).text.toString()
             val password = findViewById<EditText>(R.id.etPassword).text.toString()
             val errorMessage = findViewById<TextView>(R.id.txtError)
@@ -30,6 +30,6 @@ class MainActivity : AppCompatActivity() {
                     exitProcess(0)
                 }
             }
-        })
+        }
     }
 }
