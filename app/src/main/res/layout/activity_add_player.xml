@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
+    android:layout_height="wrap_content"
     tools:context=".AddPlayerActivity">
 
     <LinearLayout
@@ -37,8 +37,7 @@
         android:id="@+id/codeLayout"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerLayout">
@@ -140,8 +139,8 @@
 
     <LinearLayout
         android:id="@+id/positionLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_width="340dp"
+        android:layout_height="55dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@id/pointsLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -161,16 +160,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/positionLayout" />
 
-        <EditText
-            android:id="@+id/etPosition"
-            android:layout_width="283dp"
+        <Spinner
+            android:id="@+id/spPlayerPosition"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="11"
-            android:inputType="textPersonName"
+            android:layout_weight="1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toEndOf="@+id/txtPlayerCode"
-            app:layout_constraintTop_toBottomOf="@+id/nameLayout" />
+            app:layout_constraintStart_toEndOf="@id/txtPosicion" />
     </LinearLayout>
 
     <LinearLayout
@@ -178,7 +174,7 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/positionLayout">
@@ -207,4 +203,15 @@
             app:layout_constraintStart_toEndOf="@+id/txtPlayerCode"
             app:layout_constraintTop_toBottomOf="@+id/nameLayout" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:id="@+id/btnSave"
+        android:padding="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pointsLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
