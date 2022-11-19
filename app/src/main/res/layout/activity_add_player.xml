@@ -14,7 +14,6 @@
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
         >
-
         <TextView
             android:id="@+id/txtNewPlayer"
             android:layout_width="wrap_content"
@@ -60,6 +59,7 @@
             android:layout_width="283dp"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="code"
             android:inputType="textPersonName"
             app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintStart_toEndOf="parent"
@@ -94,6 +94,7 @@
             android:layout_width="283dp"
             android:layout_height="wrap_content"
             android:ems="11"
+            android:hint="Inserte un nombre"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.25"
@@ -130,6 +131,7 @@
             android:layout_width="283dp"
             android:layout_height="wrap_content"
             android:ems="11"
+            android:hint="Inserte un precio"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.25"
@@ -197,6 +199,7 @@
             android:layout_width="283dp"
             android:layout_height="wrap_content"
             android:ems="11"
+            android:hint="Inserte los puntos"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.25"
