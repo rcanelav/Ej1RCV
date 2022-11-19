@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="500dp"
     tools:context=".AddPlayerActivity">
 
     <LinearLayout
@@ -60,7 +60,7 @@
             android:id="@+id/etPlayerCode"
             android:layout_width="283dp"
             android:layout_height="wrap_content"
-            android:ems="11"
+            android:ems="10"
             android:inputType="textPersonName"
             app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintStart_toEndOf="parent"
@@ -143,9 +143,8 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pointsLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/priceLayout">
 
@@ -164,6 +163,41 @@
 
         <EditText
             android:id="@+id/etPosition"
+            android:layout_width="283dp"
+            android:layout_height="wrap_content"
+            android:ems="11"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toEndOf="@+id/txtPlayerCode"
+            app:layout_constraintTop_toBottomOf="@+id/nameLayout" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pointsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/positionLayout">
+
+        <TextView
+            android:id="@+id/txtPlayerPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="puntos"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/priceLayout" />
+
+        <EditText
+            android:id="@+id/etPlayerPoints"
             android:layout_width="283dp"
             android:layout_height="wrap_content"
             android:ems="11"
