@@ -44,20 +44,39 @@ class AddPlayerActivity : AppCompatActivity() {
         val btnSave = findViewById<Button>(R.id.btnSave)
         val btnCancel = findViewById<Button>(R.id.btnCancel)
         btnSave.setOnClickListener{
-            var newPlayerCode = binding.etPlayerCode.text.toString().toInt()
-            var newPlayerName = binding.etPlayerName.text.toString()
-            var newPlayerPrice = binding.etPlayerPrice.text.toString().toDouble()
-            var newPlayerPosition = binding.spPlayerPosition.selectedItem.toString()
-            var newPlayerPoints = binding.etPlayerPoints.text.toString().toInt()
+            // show confirmation message if user wants to save the player
+           var builder = android.app.AlertDialog.Builder(this)
+            builder.setTitle("Confirmación")
+            builder.setMessage("¿Desea guardar el jugador?")
+            // confirm, cancel buttons
+            builder.setPositiveButton("Confirmar") { dialog, which ->
+                // save the player
+                var newPlayerCode = binding.etPlayerCode.text.toString().toInt()
+                var newPlayerName = binding.etPlayerName.text.toString()
+                var newPlayerPrice = binding.etPlayerPrice.text.toString().toDouble()
+                var newPlayerPosition = binding.spPlayerPosition.selectedItem.toString()
+                var newPlayerPoints = binding.etPlayerPoints.text.toString().toInt()
 
-            val player = Player(newPlayerCode, newPlayerName, newPlayerPrice, newPlayerPosition, newPlayerPoints)
-            playersDBHelper.insertPlayer(player)
+                val player = Player(newPlayerCode, newPlayerName, newPlayerPrice, newPlayerPosition, newPlayerPoints)
+                playersDBHelper.insertPlayer(player)
 
-            //  send the player to the list
-            val intent = Intent(this, PlayerListActivity::class.java)
+                //  send the player to the list
+                val intent = Intent(this, PlayerListActivity::class.java)
 
-            intent.putExtra("player", player)
-            startActivity(intent)
+                intent.putExtra("player", player)
+                startActivity(intent)
+            }
+
+            builder.setCancelable(true)
+            builder.setNegativeButton("No") { dialog, which ->
+                finish()
+            }
+            builder.setNeutralButton("Cancelar") { dialog, which ->
+                //nothing
+            }
+
+            builder.create().show()
+
         }
 
         btnCancel.setOnClickListener{
