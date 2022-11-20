@@ -42,6 +42,7 @@ class AddPlayerActivity : AppCompatActivity() {
         positionSpinner.adapter = adapter
 
         val btnSave = findViewById<Button>(R.id.btnSave)
+        val btnCancel = findViewById<Button>(R.id.btnCancel)
         btnSave.setOnClickListener{
             var newPlayerCode = binding.etPlayerCode.text.toString().toInt()
             var newPlayerName = binding.etPlayerName.text.toString()
@@ -57,6 +58,10 @@ class AddPlayerActivity : AppCompatActivity() {
 
             intent.putExtra("player", player)
             startActivity(intent)
+        }
+
+        btnCancel.setOnClickListener{
+            finish()
         }
     }
 }
