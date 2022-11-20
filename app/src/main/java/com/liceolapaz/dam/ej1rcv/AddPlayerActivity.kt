@@ -80,7 +80,21 @@ class AddPlayerActivity : AppCompatActivity() {
         }
 
         btnCancel.setOnClickListener{
-            finish()
+            var builder = android.app.AlertDialog.Builder(this)
+            builder.setTitle("Confirmación")
+            builder.setMessage("Los datos no se guardarán. ¿Desea continuar?")
+            // confirm, cancel buttons
+            builder.setPositiveButton("Confirmar") { dialog, which ->
+                finish()
+            }
+
+            builder.setCancelable(true)
+            builder.setNegativeButton("No") { dialog, which ->
+                //nothing
+            }
+
+            builder.create().show()
+
         }
     }
 }
