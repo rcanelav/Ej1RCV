@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    Player Name Block -->
+        <TextView
+            android:id="@+id/txtPlayerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Player Name"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/txtPlayerMoney"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtPlayerPosition"
+            />
+
+    <TextView
+        android:id="@+id/txtPlayerNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Player Name Value"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@id/txtPlayerName"
+        app:layout_constraintBottom_toTopOf="@id/txtPlayerMoney"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtPlayerPositionValue"
+        />
+
+<!--    Player Position Block -->
+    <TextView
+        android:id="@+id/txtPlayerPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Position"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/txtPlayerPoints"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtPlayerName"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+        <TextView
+            android:id="@+id/txtPlayerPositionValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Position Value"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@+id/txtPlayerPosition"
+            app:layout_constraintBottom_toTopOf="@id/txtPlayerPoints"
+            app:layout_constraintStart_toEndOf="@+id/txtPlayerNameValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+<!--    Player Money Block -->
+        <TextView
+            android:id="@+id/txtPlayerMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player money"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/txtPlayerName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtPlayerPoints"
+            />
+
+    <TextView
+        android:id="@+id/txtPlayerMoneyValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player Money Value"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlayerMoney"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txtPlayerPointsValue"
+        />
+
+<!--    Player Points BLock-->
+        <TextView
+            android:id="@+id/txtPlayerPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player points"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/txtPlayerPosition"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtPlayerMoney"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    <TextView
+        android:id="@+id/txtPlayerPointsValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player Points Value"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/txtPlayerPoints"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtPlayerMoneyValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

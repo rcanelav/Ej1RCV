@@ -7,6 +7,9 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.liceolapaz.dam.ej1rcv.adapter.PlayerAdapter
 import com.liceolapaz.dam.ej1rcv.databinding.ActivityPlayerListBinding
 
 class PlayerListActivity : AppCompatActivity() {
@@ -36,6 +39,13 @@ class PlayerListActivity : AppCompatActivity() {
             }
         }
 
+        fun initRecyclerView() {
+            val recyclerView = findViewById<RecyclerView>(R.id.rvPlayerList)
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.adapter = PlayerAdapter(players)
+        }
+
+        initRecyclerView()
         val btnAddPlayer = findViewById<Button>(R.id.btnAddPlayer)
         btnAddPlayer.setOnClickListener{
             val intent = Intent(this, AddPlayerActivity::class.java)
