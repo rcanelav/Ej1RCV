@@ -95,5 +95,58 @@ class EditPlayerActivity : AppCompatActivity() {
             builder.create().show()
 
         }
+        // Cancel button
+        val btnCancel = findViewById<Button>(R.id.btnCancel)
+        btnCancel.setOnClickListener{
+            var builder = android.app.AlertDialog.Builder(this)
+            builder.setTitle("Confirmación")
+            builder.setMessage("Los datos no se guardarán. ¿Desea continuar?")
+            // confirm, cancel buttons
+            builder.setPositiveButton("Confirmar") { dialog, which ->
+                finish()
+            }
+
+            builder.setCancelable(true)
+            builder.setNegativeButton("No") { dialog, which ->
+                //nothing
+            }
+
+            builder.create().show()
+
+        }
+
+        val btnDelete = findViewById<Button>(R.id.btnDelete)
+        btnDelete.setOnClickListener{
+            var builder = android.app.AlertDialog.Builder(this)
+            builder.setTitle("Confirmación")
+            builder.setMessage("¿Desea eliminar el jugador?")
+            // confirm, cancel buttons
+            builder.setPositiveButton("Confirmar") { dialog, which ->
+                // delete the player
+                var newPlayerCode = binding.etPlayerCode.text.toString().toInt()
+                var newPlayerName = binding.etPlayerName.text.toString()
+                var newPlayerPrice = binding.etPlayerPrice.text.toString().toDouble()
+                var newPlayerPosition = binding.spPlayerPosition.selectedItem.toString()
+                var newPlayerPoints = binding.etPlayerPoints.text.toString().toInt()
+
+                val player = Player(newPlayerCode, newPlayerName, newPlayerPrice, newPlayerPosition, newPlayerPoints)
+                playersDBHelper.deletePlayer(player)
+
+                //  send the player to the list
+                val intent = Intent(this, PlayerListActivity::class.java)
+                startActivity(intent)
+            }
+
+            builder.setCancelable(true)
+            builder.setNegativeButton("No") { dialog, which ->
+                finish()
+            }
+            builder.setNeutralButton("Cancelar") { dialog, which ->
+                //nothing
+            }
+
+            builder.create().show()
+
+        }
     }
 }

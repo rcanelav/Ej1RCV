@@ -66,4 +66,9 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
         values.put("puntos", player.points)
         db.update("jugadores", values, "codigo = ?", arrayOf(player.code.toString()))
     }
+
+    fun deletePlayer( player: Player) {
+        val db = this.writableDatabase
+        db.delete("jugadores", "codigo = ?", arrayOf(player.code.toString()))
+    }
 }
