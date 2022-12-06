@@ -10,10 +10,13 @@ class PlayerAdapter(private val playerList : ArrayList<Player>) : RecyclerView.A
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayerViewHolder {
         var layoutInflater = LayoutInflater.from(parent.context)
 
+
+
         return PlayerViewHolder(layoutInflater.inflate(R.layout.player,parent, false))
     }
 
     override fun onBindViewHolder(holder: PlayerViewHolder, position: Int) {
+
         holder.render(playerList[position])
     }
 

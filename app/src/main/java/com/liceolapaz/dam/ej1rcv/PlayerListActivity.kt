@@ -13,7 +13,7 @@ import com.liceolapaz.dam.ej1rcv.adapter.PlayerAdapter
 import com.liceolapaz.dam.ej1rcv.databinding.ActivityPlayerListBinding
 
 class PlayerListActivity : AppCompatActivity() {
-    lateinit var binding : ActivityPlayerListBinding
+    lateinit var binding : com.liceolapaz.dam.ej1rcv.databinding.ActivityPlayerListBinding
     lateinit var playersDBHelper: miSQLiteHelper
     var players = ArrayList<Player>()
     override fun onCreate(savedInstanceState: Bundle?) {

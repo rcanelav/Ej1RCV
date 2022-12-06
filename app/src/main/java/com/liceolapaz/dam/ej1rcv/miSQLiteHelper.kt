@@ -56,4 +56,14 @@ class miSQLiteHelper(context: Context) : SQLiteOpenHelper(
 
         return players
     }
+
+    fun updatePlayer( player: Player) {
+        val db = this.writableDatabase
+        val values = ContentValues()
+        values.put("nombre", player.name)
+        values.put("precio", player.price)
+        values.put("posicion", player.position)
+        values.put("puntos", player.points)
+        db.update("jugadores", values, "codigo = ?", arrayOf(player.code.toString()))
+    }
 }
